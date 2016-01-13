@@ -3,37 +3,38 @@ var hits = 0;
 
 //keeps the player informed of their health
 function update(){
-    document.getElementById("pHealth").innerText="Player Health is: "+playerHealth ;
+    document.getElementById("pHealth").innerText="Player Health is: "+playerHealth ; 
+    
 }
 
 //tracks player hits
-function pHits(){
-    document.getElementById("playerHits").innerText="Total Player Hits: " + hits ;
+function pHits(){document.getElementById("playerHits").innerText="Total Player Hits: " + hits ;
+    
 }
 
-//slaps player, reducing his health
+//slaps ninja, reducing his health
 function slap(){
     playerHealth--;
     //this is to keep the health bars current
 update();
-hits++; 
-pHits()
+nupdate();
+hits++; pHits()
 }
 
-//punches player, reducing his health
+//punches ninja, reducing his health
 function punch(){
     playerHealth -=5;
     //this is to keep the health bars current
 update();
-hits++; 
-pHits()
+nupdate()
+hits++; pHits()
 }
 
-//kicks player, reducing his health
+//kicks ninja, reducing his health
 function kick(){
     playerHealth -=10;
     //this is to keep the health bars current
 update();
-hits++; 
-pHits()
+nupdate();
+hits++; pHits()
 }
