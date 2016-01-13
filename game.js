@@ -14,6 +14,20 @@ if(playerHealth <= 0){
      }
 }
 
+var Item = function(name, mod, description){
+    this.name = name;
+    this.mod = mod;
+    this.description = description;
+    this.draw = function(){
+        //funky drawing stuff here...
+    }
+}
+
+var items{
+    shield:new Item("Shield", 0.3, "This is an awesome shield."),
+    helmet:new Item("Helmet", 0.6, "This helmet smells funny."),
+    brestplate:new Item("Brestplate", 0.9, "Brestplates are awesome!")
+}
 
 //tracks player hits
 // function pHits(){
