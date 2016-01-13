@@ -10,6 +10,12 @@ function update(){
 //keeps the player informed of Ninja's health
 function nupdate(){
     document.getElementById("nHealth").innerText="Ninja Health is: "+ninjaHealth ;
+
+ if(ninjaHealth <= 0){
+         document.getElementById("player-panel").classList.add("panel-danger")
+    }else{
+         document.getElementById("player-panel").classList.remove("panel-danger")
+    }
 }
 
 //tracks player hits
@@ -23,7 +29,7 @@ function slap(){
     //this is to keep the health bars current
 update();
 nupdate();
-hits++
+hits++; pHits()
 }
 
 //punches ninja, reducing his health
@@ -32,7 +38,7 @@ function punch(){
     //this is to keep the health bars current
 update();
 nupdate();
-hits++
+hits++; pHits()
 }
 
 //kicks ninja, reducing his health
@@ -41,5 +47,5 @@ function kick(){
     //this is to keep the health bars current
 update();
 nupdate();
-hits++
+hits++; pHits()
 }
