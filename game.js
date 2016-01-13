@@ -16,8 +16,8 @@ function slap(){
     playerHealth--;
     //this is to keep the health bars current
 update();
-nupdate();
-hits++; pHits()
+hits++; 
+pHits()
 }
 
 //punches ninja, reducing his health
@@ -25,8 +25,8 @@ function punch(){
     playerHealth -=5;
     //this is to keep the health bars current
 update();
-nupdate()
-hits++; pHits()
+hits++; 
+pHits()
 }
 
 //kicks ninja, reducing his health
@@ -34,6 +34,6 @@ function kick(){
     playerHealth -=10;
     //this is to keep the health bars current
 update();
-nupdate();
-hits++; pHits()
+hits++; 
+pHits()
 }
