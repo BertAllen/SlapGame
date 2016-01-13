@@ -9,11 +9,11 @@ document.getElementById("playerHits").innerText="Total Player Hits: " + hits ;
 //this element should change the panel color 
 if(playerHealth <= 0){
          document.getElementById("player-panel").classList.add("panel-danger");
-    }
-    // else{
-    //      document.getElementById("player-panel").classList.remove("panel-danger");
-    // }
+    }else{
+         document.getElementById("player-panel").classList.remove("panel-danger");
+     }
 }
+
 
 //tracks player hits
 // function pHits(){
