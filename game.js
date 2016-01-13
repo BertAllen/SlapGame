@@ -28,7 +28,7 @@ function update() {
 }
 
 var Item = function (name, mod, description) {
-    var self = this
+    //var self = this
     this.name = name;
     this.mod = mod;
     this.description = description;
@@ -48,9 +48,17 @@ var Player = {
     health: 100,
     Pname: "",
     hits: 0,
-    items: [items.shield],
-}
+     items: [items.shield],
+    addMods: function(){
+        var totMod 
+    for(var key in items){
+        totMod += items[key];
+    }
+    return totMod;
+    }
 
+
+}
 
 //tracks player hits
 
