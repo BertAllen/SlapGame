@@ -4,7 +4,11 @@ var hits = 0;
 //keeps the player informed of their health
 function update(){
     document.getElementById("pHealth").innerText="Player Health is: "+playerHealth ;
-}
+if("playerHealth" <= 0){
+		 document.getElementById("player-panel").classList.add("panel-danger")
+	}else{
+		 document.getElementById("player-panel").classList.remove("panel-danger")
+	}}
 
 //tracks player hits
 function pHits(){
