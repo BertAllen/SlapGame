@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 9bccedfc1814db765e8dcb7d99774123e6af130d
+=======
+>>>>>>> 77aec0f77cc7e5c27220c38986540b86a7594e44
 var playerHealth =100;
 var hits = 0;
 
@@ -11,10 +14,13 @@ function update(){
 <<<<<<< HEAD
     
 
+<<<<<<< HEAD
 
 =======
 }
 
+=======
+>>>>>>> 77aec0f77cc7e5c27220c38986540b86a7594e44
 //tracks player hits
 function pHits(){
 >>>>>>> 9bccedfc1814db765e8dcb7d99774123e6af130d
@@ -36,10 +42,14 @@ function punch(){
     //this is to keep the health bars current
 update();
 <<<<<<< HEAD
+<<<<<<< HEAD
 //nupdate();
 =======
 nupdate()
 >>>>>>> 9bccedfc1814db765e8dcb7d99774123e6af130d
+=======
+nupdate()
+>>>>>>> 77aec0f77cc7e5c27220c38986540b86a7594e44
 hits++; pHits()
 }
 
