@@ -4,12 +4,13 @@ var hits = 0;
 //keeps the player informed of their health
 function update(){
     document.getElementById("pHealth").innerText="Player Health is: "+playerHealth ;
+document.getElementById("playerHits").innerText="Total Player Hits: " + hits ;
+
 }
 
 //tracks player hits
-function pHits(){
-    document.getElementById("playerHits").innerText="Total Player Hits: " + hits ;
-}
+// function pHits(){
+//     }
 
 //slaps player, reducing his health
 function slap(){
@@ -17,7 +18,7 @@ function slap(){
     //this is to keep the health bars current
 update();
 hits++; 
-pHits()
+//pHits()
 }
 
 //punches player, reducing his health
@@ -26,7 +27,7 @@ function punch(){
     //this is to keep the health bars current
 update();
 hits++; 
-pHits()
+//pHits()
 }
 
 //kicks player, reducing his health
@@ -35,5 +36,5 @@ function kick(){
     //this is to keep the health bars current
 update();
 hits++; 
-pHits()
+//pHits()
 }
