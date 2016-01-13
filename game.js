@@ -15,23 +15,25 @@ if(playerHealth <= 0){
 }
 
 var Item = function(name, mod, description){
+    var self = this 
     this.name = name;
     this.mod = mod;
     this.description = description;
     this.draw = function(){
         //funky drawing stuff here...
+        
     }
 }
 
-var items{
+var items = {
     shield:new Item("Shield", 0.3, "This is an awesome shield."),
     boots:new Item("Boots", 0.6, "These boots smell funny..."),
     brestplate:new Item("Brestplate", 0.9, "Brestplates are cool!")
 }
 
-var Player{
+var Player = {
     health: 100,
-    P-name: "",
+    Pname: "",
     hitcount: 0,
     items: [items.shield],
 }
@@ -44,8 +46,8 @@ var Player{
 function slap(){
     playerHealth--;
     //this is to keep the health bars current
-update();
 hits++; 
+update();
 //pHits()
 }
 
@@ -53,8 +55,8 @@ hits++;
 function punch(){
     playerHealth -=5;
     //this is to keep the health bars current
-update();
 hits++; 
+update();
 //pHits()
 }
 
@@ -62,7 +64,7 @@ hits++;
 function kick(){
     playerHealth -=10;
     //this is to keep the health bars current
-update();
 hits++; 
+update();
 //pHits()
 }
