@@ -28,7 +28,7 @@ var Item = function(name, mod, description){
 var items = {
     shield:new Item("Shield", 0.3, "This is an awesome shield."),
     boots:new Item("Boots", 0.6, "These boots smell funny..."),
-    brestplate:new Item("Brestplate", 0.9, "Brestplates are cool!")
+    breastplate:new Item("Breastplate", 0.9, "Breastplates are cool!")
 }
 
 var Player = {
