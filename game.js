@@ -25,8 +25,15 @@ var Item = function(name, mod, description){
 
 var items{
     shield:new Item("Shield", 0.3, "This is an awesome shield."),
-    helmet:new Item("Helmet", 0.6, "This helmet smells funny."),
-    brestplate:new Item("Brestplate", 0.9, "Brestplates are awesome!")
+    boots:new Item("Boots", 0.6, "These boots smell funny..."),
+    brestplate:new Item("Brestplate", 0.9, "Brestplates are cool!")
+}
+
+var Player{
+    health: 100,
+    P-name: "",
+    hitcount: 0,
+    items: [items.shield],
 }
 
 //tracks player hits
