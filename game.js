@@ -11,7 +11,7 @@ function pHits(){
     document.getElementById("playerHits").innerText="Total Player Hits: " + hits ;
 }
 
-//slaps ninja, reducing his health
+//slaps player, reducing his health
 function slap(){
     playerHealth--;
     //this is to keep the health bars current
@@ -20,7 +20,7 @@ hits++;
 pHits()
 }
 
-//punches ninja, reducing his health
+//punches player, reducing his health
 function punch(){
     playerHealth -=5;
     //this is to keep the health bars current
@@ -29,7 +29,7 @@ hits++;
 pHits()
 }
 
-//kicks ninja, reducing his health
+//kicks player, reducing his health
 function kick(){
     playerHealth -=10;
     //this is to keep the health bars current
