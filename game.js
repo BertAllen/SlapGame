@@ -38,7 +38,7 @@ var Player = {
     health: 100,
     Pname: "",
     hits: 0,
-     wornItems: [items.shield],
+     wornItems: [],
     addMods: function(){
         var totMod =0
     for(var i=0; i< this.wornItems.length; i++){
@@ -81,3 +81,5 @@ function kick() {
     update();
 
 }
+
+
