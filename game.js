@@ -7,6 +7,8 @@ function update() {
 
     document.getElementById("pHealth").innerText = "Player Health is: " + Player.health;
     document.getElementById("playerHits").innerText = "Total Player Hits: " + Player.hits;
+    document.getElementById("player-items").innerText = "Total Items Currently Equipped: " + listBuilder()
+    
 
 
     //this element should change the panel color 
@@ -17,6 +19,14 @@ function update() {
     }
 }
 
+function listBuilder() {
+    var itemString = "";
+    for (var i = 0; i < Player.wornItems.length; i++) {
+        itemString += Player.wornItems[i].name;
+        itemString += " ";
+    }
+    return itemString;
+}
 var Item = function (name, mod, description) {
     //var self = this
     this.name = name;
@@ -38,14 +48,14 @@ var Player = {
     health: 100,
     Pname: "",
     hits: 0,
-     wornItems: [],
-    addMods: function(){
-        var totMod =0
-    for(var i=0; i< this.wornItems.length; i++){
-        totMod += this.wornItems[i].mod; //is ".mod" reference correct?;
-        
-   }
-    return totMod;
+    wornItems: [],
+    addMods: function () {
+        var totMod = 0
+        for (var i = 0; i < this.wornItems.length; i++) {
+            totMod += this.wornItems[i].mod;
+
+        }
+        return totMod;
     }
 
 
@@ -57,7 +67,7 @@ var Player = {
 
 //slaps players, reducing his health
 function slap() {
-    Player.health -= 1 - (1*Player.addMods());
+    Player.health -= 1 - (1 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -66,7 +76,7 @@ function slap() {
 
 //punches players, reducing his health
 function punch() {
-    Player.health -= 5 - (5*Player.addMods());
+    Player.health -= 5 - (5 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -75,7 +85,7 @@ function punch() {
 
 //kicks players, reducing his health
 function kick() {
-    Player.health -= 10 - (10*Player.addMods());
+    Player.health -= 10 - (10 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -84,7 +94,7 @@ function kick() {
 
 function giveshield() {
     Player.wornItems.push(items.shield);
-    Player.health -= 1 - (1*Player.addMods());
+    Player.health -= 1 - (1 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -93,7 +103,7 @@ function giveshield() {
 
 function giveboots() {
     Player.wornItems.push(items.boots);
-    Player.health -= 5 - (5*Player.addMods());
+    Player.health -= 5 - (5 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -102,7 +112,7 @@ function giveboots() {
 
 function givebreastplate() {
     Player.wornItems.push(items.breastplate);
-    Player.health -= 10 - (10*Player.addMods());
+    Player.health -= 10 - (10 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
