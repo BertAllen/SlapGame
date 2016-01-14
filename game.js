@@ -82,4 +82,33 @@ function kick() {
 
 }
 
+function giveshield() {
+    Player.wornItems.push(items.shield);
+    Player.health -= 1 - (1*Player.addMods());
+    //this is to keep the health bars current
+    Player.hits++;
+    update();
+
+}
+
+function giveboots() {
+    Player.wornItems.push(items.boots);
+    Player.health -= 5 - (5*Player.addMods());
+    //this is to keep the health bars current
+    Player.hits++;
+    update();
+
+}
+
+function givebreastplate() {
+    Player.wornItems.push(items.breastplate);
+    Player.health -= 10 - (10*Player.addMods());
+    //this is to keep the health bars current
+    Player.hits++;
+    update();
+
+}
+
+
+
 
