@@ -12,10 +12,10 @@ function update() {
 
 
     //this element should change the panel color 
-    if (Player.health >= 50) {
+    if (Player.health >= 51) {
         document.getElementById("player-panel").classList.add("panel-success");
     }
-    if (Player.health < 50 && Player.health > 11) {
+    if (Player.health <= 50 && Player.health > 11) {
         document.getElementById("player-panel").classList.add("panel-warning");
     }
     if (Player.health <= 10) {
