@@ -23,9 +23,9 @@ function update() {
     } else {
         document.getElementById("player-panel").classList.remove("panel-danger");
     }
-    if (Player.health <= 0){
-        document.getElementById("banner").innerText = "Boise CodeWorks Slapdown! ---Game Over---" ;
-    
+    if (Player.health <= 0) {
+        document.getElementById("banner").innerText = "Boise CodeWorks Slapdown! ---Game Over---";
+
     }
 }
 
@@ -35,7 +35,7 @@ function listBuilder() {
         itemString += Player.wornItems[i].name;
         itemString += " ";
     }
-    if(itemString === ""){
+    if (itemString === "") {
         itemString = "None"
     }
     return itemString;
@@ -81,8 +81,8 @@ var Player = {
 //slaps players, reducing his health
 function slap() {
     Player.health -= 1 - (1 * Player.addMods());
-        document.getElementById("armor-message").innerText = ""
-        //this is to keep the health bars current
+    document.getElementById("armor-message").innerText = ""
+    //this is to keep the health bars current
     Player.hits++;
     update();
 
@@ -91,8 +91,8 @@ function slap() {
 //punches players, reducing his health
 function punch() {
     Player.health -= 5 - (5 * Player.addMods());
-       document.getElementById("armor-message").innerText = ""
-        //this is to keep the health bars current
+    document.getElementById("armor-message").innerText = ""
+    //this is to keep the health bars current
     Player.hits++;
     update();
 
