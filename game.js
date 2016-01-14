@@ -25,6 +25,9 @@ function listBuilder() {
         itemString += Player.wornItems[i].name;
         itemString += " ";
     }
+    if(itemString === ""){
+        itemString = "None"
+    }
     return itemString;
 }
 var Item = function (name, mod, description) {
