@@ -23,6 +23,10 @@ function update() {
     } else {
         document.getElementById("player-panel").classList.remove("panel-danger");
     }
+    if (Player.health <= 0){
+        document.getElementById("banner").innerText = "Boise CodeWorks Slapdown! ---Game Over---" ;
+    
+    }
 }
 
 function listBuilder() {
