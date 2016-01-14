@@ -81,7 +81,8 @@ var Player = {
 //slaps players, reducing his health
 function slap() {
     Player.health -= 1 - (1 * Player.addMods());
-    //this is to keep the health bars current
+        document.getElementById("armor-message").innerText = ""
+        //this is to keep the health bars current
     Player.hits++;
     update();
 
@@ -90,7 +91,8 @@ function slap() {
 //punches players, reducing his health
 function punch() {
     Player.health -= 5 - (5 * Player.addMods());
-    //this is to keep the health bars current
+       document.getElementById("armor-message").innerText = ""
+        //this is to keep the health bars current
     Player.hits++;
     update();
 
@@ -99,6 +101,7 @@ function punch() {
 //kicks players, reducing his health
 function kick() {
     Player.health -= 10 - (10 * Player.addMods());
+    document.getElementById("armor-message").innerText = ""
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -107,6 +110,7 @@ function kick() {
 
 function giveshield() {
     Player.wornItems.push(items.shield);
+    document.getElementById("armor-message").innerText = items.shield.description
     Player.health -= 1 - (1 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
@@ -116,6 +120,7 @@ function giveshield() {
 
 function giveboots() {
     Player.wornItems.push(items.boots);
+    document.getElementById("armor-message").innerText = items.boots.description
     Player.health -= 5 - (5 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
@@ -125,6 +130,7 @@ function giveboots() {
 
 function givebreastplate() {
     Player.wornItems.push(items.breastplate);
+    document.getElementById("armor-message").innerText = items.breastplate.description
     Player.health -= 10 - (10 * Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
