@@ -1,17 +1,7 @@
 //var playerHealth =100;
 //var hits = 0;
-var Item = function (name, modifier, description) {
-    this.name = name;
-    this.modifier = modifier;
-    this.description = description;
-    this.draw = function () {
-    }
-}
-var items = {
-    shield: new Item("Shield", 0.3, "This is an awesome shield!"),
-    helmet: new Item("Helmet", 0.2, "This is an awesome helmet!"),
-    armor: new Item("Armor", 0.5, "This is an awesome set of armor!")
-}
+
+
 //keeps the player informed of their health
 function update() {
 
@@ -48,12 +38,13 @@ var Player = {
     health: 100,
     Pname: "",
     hits: 0,
-     items: [items.shield],
+     wornItems: [items.shield],
     addMods: function(){
-        var totMod 
-    for(var key in items){
-        totMod += items[key];
-    }
+        var totMod =0
+    for(var i=0; i< this.wornItems.length; i++){
+        totMod += this.wornItems[i].mod; //is ".mod" reference correct?;
+        
+   }
     return totMod;
     }
 
@@ -66,7 +57,7 @@ var Player = {
 
 //slaps players, reducing his health
 function slap() {
-    Player.health--;
+    Player.health -= 1 - (1*Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -75,7 +66,7 @@ function slap() {
 
 //punches players, reducing his health
 function punch() {
-    Player.health -= 5;
+    Player.health -= 5 - (5*Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
@@ -84,7 +75,7 @@ function punch() {
 
 //kicks players, reducing his health
 function kick() {
-    Player.health -= 10;
+    Player.health -= 10 - (10*Player.addMods());
     //this is to keep the health bars current
     Player.hits++;
     update();
