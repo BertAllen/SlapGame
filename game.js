@@ -8,7 +8,7 @@ function update() {
     document.getElementById("pHealth").innerText = "Player Health is: " + Player.health;
     document.getElementById("playerHits").innerText = "Total Player Hits: " + Player.hits;
     document.getElementById("player-items").innerText = "Total Items Currently Equipped: " + listBuilder()
-    
+
 
 
     //this element should change the panel color 
@@ -31,9 +31,12 @@ function update() {
 
 function listBuilder() {
     var itemString = "";
+    // debugger;
     for (var i = 0; i < Player.wornItems.length; i++) {
-        itemString += Player.wornItems[i].name;
-        itemString += " ";
+        if (Player.wornItems[i].mod > 0) {
+            itemString += Player.wornItems[i].name;
+            itemString += " ";
+        }
     }
     if (itemString === "") {
         itemString = "None"
@@ -47,7 +50,7 @@ var Item = function (name, mod, description) {
     this.description = description;
     this.draw = function () {
         //funky drawing stuff here...
-        
+
     }
 }
 
@@ -66,11 +69,20 @@ var Player = {
         var totMod = 0
         for (var i = 0; i < this.wornItems.length; i++) {
             totMod += this.wornItems[i].mod;
-
+        }
+        if (totMod > 1) { //this fixes the "gaining health" issue during the game
+            totMod = 1
         }
         return totMod;
+    },
+    damageMods: function () {
+        for (var i = 0; i < this.wornItems.length; i++) {
+            this.wornItems[i].mod -= 0.1;
+            if (this.wornItems[i].mod < 0) {
+                this.wornItems[i].mod = 0;
+            }
+        }
     }
-
 
 }
 
@@ -80,7 +92,11 @@ var Player = {
 
 //slaps players, reducing his health
 function slap() {
+    if (Player.health <= 0) {
+        return;
+    }
     Player.health -= 1 - (1 * Player.addMods());
+    Player.damageMods();
     document.getElementById("armor-message").innerText = ""
     //this is to keep the health bars current
     Player.hits++;
@@ -90,7 +106,11 @@ function slap() {
 
 //punches players, reducing his health
 function punch() {
+    if (Player.health <= 0) {
+        return;
+    }
     Player.health -= 5 - (5 * Player.addMods());
+    Player.damageMods();
     document.getElementById("armor-message").innerText = ""
     //this is to keep the health bars current
     Player.hits++;
@@ -100,7 +120,11 @@ function punch() {
 
 //kicks players, reducing his health
 function kick() {
+    if (Player.health <= 0) {
+        return;
+    }
     Player.health -= 10 - (10 * Player.addMods());
+    Player.damageMods();
     document.getElementById("armor-message").innerText = ""
     //this is to keep the health bars current
     Player.hits++;
@@ -110,6 +134,9 @@ function kick() {
 
 function giveshield() {
     Player.wornItems.push(items.shield);
+    if (Player.health <= 0) {
+        return;
+    }
     document.getElementById("armor-message").innerText = items.shield.description
     Player.health -= 1 - (1 * Player.addMods());
     //this is to keep the health bars current
@@ -120,6 +147,9 @@ function giveshield() {
 
 function giveboots() {
     Player.wornItems.push(items.boots);
+    if (Player.health <= 0) {
+        return;
+    }
     document.getElementById("armor-message").innerText = items.boots.description
     Player.health -= 5 - (5 * Player.addMods());
     //this is to keep the health bars current
@@ -130,6 +160,9 @@ function giveboots() {
 
 function givebreastplate() {
     Player.wornItems.push(items.breastplate);
+    if (Player.health <= 0) {
+        return;
+    }
     document.getElementById("armor-message").innerText = items.breastplate.description
     Player.health -= 10 - (10 * Player.addMods());
     //this is to keep the health bars current
