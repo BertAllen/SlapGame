@@ -1,15 +1,9 @@
-//var playerHealth =100;
-//var hits = 0;
-
-
 //keeps the player informed of their health
 function update() {
 
     document.getElementById("pHealth").innerText = "Player Health is: " + Player.health;
     document.getElementById("playerHits").innerText = "Total Player Hits: " + Player.hits;
     document.getElementById("player-items").innerText = "Total Items Currently Equipped: " + listBuilder()
-
-
 
     //this element should change the panel color 
     if (Player.health >= 51) {
@@ -25,7 +19,6 @@ function update() {
     }
     if (Player.health <= 0) {
         document.getElementById("banner").innerText = "Boise CodeWorks Slapdown! ---Game Over---";
-
     }
 }
 
@@ -50,7 +43,6 @@ var Item = function (name, mod, description) {
     this.description = description;
     this.draw = function () {
         //funky drawing stuff here...
-
     }
 }
 
@@ -83,14 +75,11 @@ var Player = {
             }
         }
     }
-
 }
 
 //tracks player hits
 
-
-
-//slaps players, reducing his health
+//slaps player, reducing his health
 function slap() {
     if (Player.health <= 0) {
         return;
@@ -101,10 +90,9 @@ function slap() {
     //this is to keep the health bars current
     Player.hits++;
     update();
-
 }
 
-//punches players, reducing his health
+//punches player, reducing his health
 function punch() {
     if (Player.health <= 0) {
         return;
@@ -115,10 +103,9 @@ function punch() {
     //this is to keep the health bars current
     Player.hits++;
     update();
-
 }
 
-//kicks players, reducing his health
+//kicks player, reducing his health
 function kick() {
     if (Player.health <= 0) {
         return;
@@ -129,7 +116,6 @@ function kick() {
     //this is to keep the health bars current
     Player.hits++;
     update();
-
 }
 
 function giveshield() {
@@ -142,7 +128,6 @@ function giveshield() {
     //this is to keep the health bars current
     Player.hits++;
     update();
-
 }
 
 function giveboots() {
@@ -155,7 +140,6 @@ function giveboots() {
     //this is to keep the health bars current
     Player.hits++;
     update();
-
 }
 
 function givebreastplate() {
@@ -168,9 +152,4 @@ function givebreastplate() {
     //this is to keep the health bars current
     Player.hits++;
     update();
-
 }
-
-
-
-
